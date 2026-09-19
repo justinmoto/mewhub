@@ -34,9 +34,11 @@ import {
   ProductStateVariantsScreen,
 } from "./screens/ui-states";
 import { ColorPaletteScreen } from "./screens/color-palette";
+import { TypographyScreen } from "./screens/typography";
 
 type ScreenId =
   | "colors"
+  | "typography"
   | "home"
   | "shop"
   | "search-open"
@@ -84,7 +86,10 @@ const SECTIONS: {
 }[] = [
   {
     title: "Brand",
-    items: [{ id: "colors", label: "Color Palette" }],
+    items: [
+      { id: "colors", label: "Color Palette" },
+      { id: "typography", label: "Typography" },
+    ],
   },
   {
     title: "Customer Shopping Flow",
@@ -157,6 +162,8 @@ function renderScreen(id: ScreenId) {
   switch (id) {
     case "colors":
       return <ColorPaletteScreen />;
+    case "typography":
+      return <TypographyScreen />;
     case "home":
       return <HomepageScreen />;
     case "shop":
